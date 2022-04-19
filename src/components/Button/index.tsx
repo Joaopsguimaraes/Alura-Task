@@ -1,8 +1,8 @@
-import * as React from 'react';
-import style from "./style.module.scss"
+import * as React from "react";
+import style from "./style.module.scss";
 
-const Button = () =>{
-    return <button className={style.botao}>Enviar</button>
-}
+const Button = () => {
+  return <button className={style.botao}>Enviar</button>;
+};
 
 export default Button;

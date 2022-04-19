@@ -1,10 +1,10 @@
 import * as React from "react";
 import Button from "../Button";
-import style from  "./style.module.scss";
+import style from "./style.module.scss";
 
 const Form = () => {
   return (
-    <form className={style.novaTarefa}> 
+    <form className={style.novaTarefa}>
       <div className={style.inputContainer}>
         <label htmlFor="task">Adiciona um novo estudo</label>
         <input
@@ -26,7 +26,7 @@ const Form = () => {
           max="01:30:00"
         />
       </div>
-      <Button/>
+      <Button />
     </form>
   );
 };
