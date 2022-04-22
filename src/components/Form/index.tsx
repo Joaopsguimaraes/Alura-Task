@@ -1,22 +1,37 @@
-import * as React from "react";
+import React, { useState } from "react";
+import ITasks from "../../types/Taskes";
 import Button from "../Button";
 import style from "./style.module.scss";
 
-const Form = () => {
+const Form = ({
+  setTasks,
+}: {
+  setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>;
+}) => {
+  const [study, setStudy] = useState("");
+  const [time, setTime] = useState("");
+
+  const addTool = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(study, time)
+  };
+
   return (
-    <form className={style.novaTarefa}>
+    <form className={style.novaTarefa} onSubmit={addTool}>
       <div className={style.inputContainer}>
-        <label htmlFor="task">Adiciona um novo estudo</label>
+        <label htmlFor="task">Add a new study</label>
         <input
           type="text"
           name="task"
           id="task"
-          placeholder="O que quer estudar"
+          placeholder="What do you want to study?"
           required
+          value={study}
+          onChange={(event) => setStudy(event.target.value)}
         />
       </div>
       <div className={style.inputContainer}>
-        <label htmlFor="time">Tempo</label>
+        <label htmlFor="time">Time</label>
         <input
           type="time"
           step="1"
@@ -24,9 +39,11 @@ const Form = () => {
           id="time"
           min="00:00:00"
           max="01:30:00"
+          value={time}
+          onChange={(event) => setTime(event.target.value)}
         />
       </div>
-      <Button />
+      <Button type="submit" text="Send" />
     </form>
   );
 };

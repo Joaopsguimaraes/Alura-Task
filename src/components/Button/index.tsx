@@ -1,8 +1,17 @@
-import * as React from "react";
 import style from "./style.module.scss";
 
-const Button = () => {
-  return <button className={style.botao}>Enviar</button>;
+const Button = ({
+  text,
+  type,
+}: {
+  text: string;
+  type?: "button" | "submit" | "reset" | undefined;
+}) => {
+  return (
+    <button type={type} className={style.button}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

@@ -1,0 +1,19 @@
+.clockNumber {
+    background-color: #333333;
+    box-shadow: 2px 2px 4px #2B2B2B inset;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 90%;
+    height: 100%;
+  
+    @media screen and (min-width:1280px) {
+    }
+  }
+  
+  .clockDivision {
+    height: 4.2rem;
+  
+    @media screen and (min-width:1280px) {
+      height: 120%;
+    }
+  }

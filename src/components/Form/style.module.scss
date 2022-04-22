@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   grid-area: nova-tarefa;
-  background-color: #7687a1;
+  background-color: #000000;
   border-radius: 10px;
-  box-shadow: 2px 4px 4px #0000009f;
+  box-shadow: 3px 4px 4px #0000009f;
   padding: 12px;
 
   .inputContainer {
@@ -16,6 +16,7 @@
     label {
       margin-bottom: 8px;
       font-size: 1.25rem;
+      color: #fff;
     }
 
     input {
@@ -24,11 +25,13 @@
       box-sizing: border-box;
       border: unset;
       border-radius: 5px;
-      background-color: #5d677c;
+      background-color: #fff;
+      color:#000;
       box-shadow: 0px 2px 4px #2d2b2b9f inset;
+      border: .5px solid #000;
 
       &::placeholder {
-        color: #bfbfbf;
+        color: #bbb;
       }
     }
   }
