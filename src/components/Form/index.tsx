@@ -2,22 +2,28 @@ import React, { useState } from "react";
 import ITasks from "../../types/Taskes";
 import Button from "../Button";
 import style from "./style.module.scss";
+import { v4 as uuidv4 } from 'uuid';
 
-const Form = ({
-  setTasks,
-}: {
+interface Props {
   setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>;
-}) => {
-  const [study, setStudy] = useState("");
+}
+
+const Form = ({ setTasks }: Props) => {
+  const [task, setTask] = useState("");
   const [time, setTime] = useState("");
+  const [select, setSelect] = useState(false);
+  const [completed, setcompleted] = useState(false);
+  const [id, setId] = useState(uuidv4());
 
-  const addTool = (event: React.FormEvent<HTMLFormElement>) => {
+  const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(study, time)
+    setTasks((oldTasks) => [...oldTasks, { task, time, select, completed, id }]);
+    setTask("");
+    setTime("");
+    setId("")
   };
-
   return (
-    <form className={style.novaTarefa} onSubmit={addTool}>
+    <form className={style.novaTarefa} onSubmit={addTask}>
       <div className={style.inputContainer}>
         <label htmlFor="task">Add a new study</label>
         <input
@@ -26,8 +32,8 @@ const Form = ({
           id="task"
           placeholder="What do you want to study?"
           required
-          value={study}
-          onChange={(event) => setStudy(event.target.value)}
+          value={task}
+          onChange={(event) => setTask(event.target.value)}
         />
       </div>
       <div className={style.inputContainer}>

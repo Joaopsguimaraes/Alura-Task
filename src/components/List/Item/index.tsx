@@ -1,8 +1,24 @@
-import style from "../../List/style.module.scss";
+import ITasks from "../../../types/Taskes";
+import style from "./Item.module.scss";
 
-const Items = ({task, time}:{task:string, time: string}) => {
+interface Props extends ITasks {
+  selectTask: (taskSelected: ITasks) => void;
+}
+
+const Items = ({ task, time, select, completed, id, selectTask }: Props) => {
   return (
-    <li className={style.item}>
+    <li
+      className={`${style.item} ${select ? style.itemSelecionado : ''}`}
+      onClick={() =>
+        selectTask({
+          task,
+          time,
+          select,
+          completed,
+          id,
+        })
+      }
+    >
       <h3>{task}</h3>
       <span>{time}</span>
     </li>

@@ -1,12 +1,10 @@
 import style from "./style.module.scss";
-
-const Button = ({
-  text,
-  type,
-}: {
+interface Props {
   text: string;
   type?: "button" | "submit" | "reset" | undefined;
-}) => {
+}
+
+const Button = ({ text, type }: Props) => {
   return (
     <button type={type} className={style.button}>
       {text}
