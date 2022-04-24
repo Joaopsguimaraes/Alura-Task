@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Form from "../components/Form";
 import List from "../components/List";
 import Stopwatch from "../components/Stopwatch";
@@ -22,7 +22,7 @@ const App = () => {
     <div className={style.AppStyle}>
       <Form setTasks={setTasks} />
       <List tasks={tasks} selectTask={selectTask} />
-      <Stopwatch />
+      <Stopwatch selected={select}/>
     </div>
   );
 };
