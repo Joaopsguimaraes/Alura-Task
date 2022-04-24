@@ -16,13 +16,23 @@ const Stopwatch = ({ selected }: Props) => {
       setTime(timeToSeconds(selected.time));
     }
   }, [selected]);
+
+  function regressive(count:number = 0) {
+      setTimeout(() => {
+        if(count > 0){
+          setTime(count - 1);
+          return regressive(count - 1);
+        }
+      },1000)
+  }
+
   return (
     <div className={style.stopwatch}>
       <p className={style.title}>Choose a card and start the timer</p>
       <div className={style.clockWrapper}>
-        <Clock />
+        <Clock time={time}/>
       </div>
-      <Button text="Start" />
+      <Button text="Start" onClick={() => regressive(time)}/>
     </div>
   );
 };
