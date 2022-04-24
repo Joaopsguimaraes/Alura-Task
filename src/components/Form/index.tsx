@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ITasks from "../../types/Taskes";
 import Button from "../Button";
 import style from "./style.module.scss";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>;
@@ -17,13 +17,16 @@ const Form = ({ setTasks }: Props) => {
 
   const addTask = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setTasks((oldTasks) => [...oldTasks, { task, time, select, completed, id }]);
+    setTasks((oldTasks) => [
+      ...oldTasks,
+      { task, time, select, completed, id },
+    ]);
     setTask("");
     setTime("");
-    setId("")
+    setId("");
   };
   return (
-    <form className={style.novaTarefa} onSubmit={addTask}>
+    <form className={style.newTask} onSubmit={addTask}>
       <div className={style.inputContainer}>
         <label htmlFor="task">Add a new study</label>
         <input

@@ -7,8 +7,8 @@ interface Props {
 const Clock = ({ time = 0 }: Props) => {
   const minuts = Math.floor(time / 60);
   const seconds = time % 60;
-  const [minutsDez, minutsUn] = String(minuts).padStart(2,'0');
-  const [secondsDez, secondsUn] = String(seconds).padStart(2,'0');
+  const [minutsDez, minutsUn] = String(minuts).padStart(2, "0");
+  const [secondsDez, secondsUn] = String(seconds).padStart(2, "0");
 
   return (
     <>

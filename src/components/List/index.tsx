@@ -9,7 +9,7 @@ interface Props {
 
 const List = ({ tasks, selectTask }: Props) => {
   return (
-    <aside className={style.listaTarefas}>
+    <aside className={style.taskList}>
       <h2>Studies of the day</h2>
       <ul>
         {tasks.map((item) => (
