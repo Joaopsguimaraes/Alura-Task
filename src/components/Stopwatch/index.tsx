@@ -17,7 +17,7 @@ const Stopwatch = ({ selected }: Props) => {
     }
   }, [selected]);
 
-  function regressive(count:number = 0) {
+  function regressive(count:Number = 0) {
       setTimeout(() => {
         if(count > 0){
           setTime(count - 1);
