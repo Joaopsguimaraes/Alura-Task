@@ -18,7 +18,7 @@ const Stopwatch = ({ selected }: Props) => {
   }, [selected]);
   return (
     <div className={style.stopwatch}>
-      <p className={style.title}>Choose a card and start the timer {time}</p>
+      <p className={style.title}>Choose a card and start the timer</p>
       <div className={style.clockWrapper}>
         <Clock />
       </div>
